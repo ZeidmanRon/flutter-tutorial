@@ -28,7 +28,7 @@ class _SignInState extends State<SignIn> {
             dynamic result = await _auth.signInAnon();
               result == null
                 ? print('error signing in')
-                : print('signed in \n $result');
+                : print('user id: ${result.uid}');
           },
         ),
       ),

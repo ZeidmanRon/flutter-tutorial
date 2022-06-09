@@ -1,5 +1,7 @@
 import 'package:brew_crew/Screens/Authenticate/auhtenticate.dart';
+import 'package:brew_crew/models/user.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'Home/Home.dart';
 
 class Wrapper extends StatelessWidget {
@@ -7,9 +9,9 @@ class Wrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    
+    final user = Provider.of<BrewUser?>(context);
+    // print(user);
     //return either Home or Authenticate widget
-    return Authenticate();
+    return user == null ? Authenticate() : Home();
   }
 }
